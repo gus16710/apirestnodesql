@@ -1,23 +1,24 @@
 const Sequelize = require("sequelize");
 const db = require("../config/db");
 
-const users = db.define("users", {
-    id: {
+const suppliers = db.define("proveedor", {
+    id_proveedor: {
         type: Sequelize.BIGINT,
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
+    nombre: {
         type: Sequelize.STRING(50),
     },
-    email: {
+    domicilio: {
         type: Sequelize.STRING(50),        
     },
-    password: {
+    correo: {
         type: Sequelize.STRING(50),        
     },
 }, {
+    freezeTableName: true, // Model tableName will be the same as the model name,
     timestamps: false
 });
 
-module.exports = user;
+module.exports = suppliers;
